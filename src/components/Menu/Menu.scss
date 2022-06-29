@@ -1,0 +1,28 @@
+.menu {
+    width: 250px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 30px 0px 30px;
+
+    &_navigation {
+        display: flex;
+        flex-direction: column;
+
+        button {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        p {
+            color: white;
+            font-size: 30px;
+            margin: 20px auto 70px auto;
+            font-weight: 700;
+        }
+        p span{
+            color: rgba(123, 97, 255, 1);
+        }
+    }
+}

@@ -1,0 +1,44 @@
+.film-description {
+    display: flex;
+
+    &_img {
+        width: 240px;
+        background-color: yellow;
+
+        img {
+            width: 240px;
+            height: 300px;
+            background-color: rgb(125, 58, 233);
+            margin-bottom: 30px;
+        }
+
+        &--buttons {
+            display: flex;
+        }
+
+        &--button-bookmark {
+            width: 120px;
+            height: 50px;
+        }
+
+        &--button-forward {
+            width: 120px;
+            height: 50px;
+        }
+    }
+
+    &_recommendations {
+        display: flex;
+        justify-content: space-between;
+
+        &--button-left {
+            width: 60px;
+            height: 25px;
+        }
+
+        &--button-right {
+            width: 60px;
+            height: 25px;
+        }
+    }
+}

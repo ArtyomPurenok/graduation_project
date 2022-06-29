@@ -1,0 +1,26 @@
+.card {
+    width: 200px;
+    margin: 30px 20px 30px 0px;
+
+
+    img {
+        width: 200px;
+        height: 270px;
+        border-radius: 20px;
+        border: 3px solid transparent;
+
+        &:hover {
+            border: 3px solid green ;
+        }
+    }
+
+    &_film-name {
+        margin: 15px 0px 0px 0px;
+        color: white;
+    }
+
+    &_year {
+        margin: 0px 0px 15px 0px;
+        color: white;
+    }
+}
