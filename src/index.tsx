@@ -13,6 +13,10 @@ import { SinglePage } from './Pages/SinglePage'
 import { MainPage } from './Pages/MainPage'
 import { FavoritesPage } from './Pages/FavoritesPage'
 import { SignInPage } from './Pages/SignInPage'
+import { SignUpPage } from './Pages/SignUpPage'
+import { VerifyPage } from './Pages/VerifyPage'
+import { ResetPasswordPage } from './Pages/ResetPasswordPage'
+import { NewPasswordPage } from './Pages/NewPasswordPage'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -27,6 +31,10 @@ root.render(
             <Route path='/main' element={<MainPage/>}/>
             <Route path='/favorites' element={<FavoritesPage/>}/>
             <Route path='/signIn' element={<SignInPage/>}/>
+            <Route path='/signUp' element={<SignUpPage/>}/>
+            <Route path='/verify' element={<VerifyPage/>}/>
+            <Route path='/resetPassword' element={<ResetPasswordPage/>}/>
+            <Route path='/newPassword' element={<NewPasswordPage/>}/>
             <Route path='/posts/:id' element={<SinglePage/>}/>
             </Route>
             <Route

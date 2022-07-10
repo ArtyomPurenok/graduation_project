@@ -19,7 +19,7 @@ export const SinglePage = () => {
     const {id} = useParams();
 
     const OnePostData = useSelector((state: any) => state.onePost.data);
-    const ArrFavorites = useSelector((state: any) => state.favorites.favorites.data);
+    const ArrFavorites = useSelector((state: any) => state.persist.favorites.data);
     const dispatch = useDispatch();
     
 

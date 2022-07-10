@@ -15,9 +15,12 @@ import posts from "./reducer/postsReducer"
 import OnePost from "./reducer/onePostReducer"
 import favorites from "./reducer/favoritesReducer"
 import filters from "./reducer/filterReducer"
+import tokens from "./reducer/tokensReducer"
+import userReducer from "./reducer/userReducer"
 
 const rootReduser = combineReducers({
     favorites: favorites,
+    tokens: tokens,
 })
 
 const persistConfig = {
@@ -31,8 +34,9 @@ export const store = configureStore({
     reducer: {
         posts: posts,
         onePost: OnePost,
-        favorites: persistedReduser,
+        persist: persistedReduser,
         filters: filters,
+        user: userReducer,
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -9,7 +9,7 @@ import { useFilterFunction } from "../../components/Header/Filter/useFilterFunct
 
 
 export const FavoritesPage = () => {
-    const postsFavorites = useSelector((state: any) => state.favorites.favorites.data);
+    const postsFavorites = useSelector((state: any) => state.persist.favorites.data);
 
     useEffect(() => {
         console.log(postsFavorites);

@@ -1,4 +1,4 @@
-.sign-in {
+.sign-up {
     position: fixed;
     display: flex;
     justify-content: center;
@@ -18,14 +18,18 @@
         background-color: transparent;
     }
 
+    & a {
+        color: rgba(128, 133, 139, 1);
+        margin: 0px;
+    }
 
-    &_email {
+    &_name, &_email {
         margin-bottom: 24px;
     }
 
     &_center {
         width: 504px;
-        height: 440px;
+        height: 520px;
         padding: 40px;
         background-color: rgba(36, 36, 38, 1);
         border-radius: 10px;
@@ -38,14 +42,6 @@
 
         &--inputs {
             margin: 40px 0px;
-        }
-
-        &--forgot-password {
-            color: rgba(128, 133, 139, 1);
-    
-            &:hover {
-                color: rgb(164, 170, 177);
-            }
         }
     }
 
@@ -63,7 +59,7 @@
         }
     }
 
-    &_sign-up {
+    &_sign-in {
         text-align: center;
         color: rgba(128, 133, 139, 1);
 

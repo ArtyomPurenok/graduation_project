@@ -7,13 +7,17 @@ type InputBoxProps = {
     className?: string
     text?: string
     placeholder?: string
+    value?: string
+    name?: string
+    type?: string
+    onChange?: any
 }
 
-export const InputBox = ({text, placeholder, className}: InputBoxProps) => {
+export const InputBox = ({text, placeholder, className, value, name, type, onChange}: InputBoxProps) => {
     return <div className={`input-box ${className}`}>
 
         <p>{text}</p>
-        <Input className="input-box_input" placeholder={placeholder}/>
+        <Input onChange={onChange} type={type} name={name} value={value} className="input-box_input" placeholder={placeholder}/>
 
     </div>
 }
