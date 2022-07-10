@@ -1,0 +1,22 @@
+.input-box {
+    width: 494px;
+
+    & p {
+        font-size: 16px;
+        margin: 0px;
+        margin-bottom: 8px;
+        color: white;
+    }
+    
+    &_input {
+        width: 100%;
+        height: 36px;
+        font-size: 16px;
+        padding: 10px;
+        outline: 0;
+        border: transparent;
+        border-radius: 10px;
+        color: white;
+        background-color: rgba(50, 53, 55, 1);
+    }
+}

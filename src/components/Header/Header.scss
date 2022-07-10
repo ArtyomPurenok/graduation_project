@@ -1,9 +1,16 @@
+.header_general {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .header {
     width: 100%;
+    background-color: yellowgreen;
     height: 60px;
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    padding-top: 30px;
 
     &_seach {
         width: 850px;
@@ -15,10 +22,30 @@
     }
 
     &_user {
+        display: flex;
         width: 250px;
         height: 50px;
         margin: auto;
         margin-right: 50px;
         background-color: aqua;
+
+        & svg {
+            width: 30px;
+            height: 30px;
+            margin: auto;
+
+            // & path {
+            //     fill: green;
+            // }
+        }
+
+        &--icon {
+            width: 40px;
+            height: 40px;
+            margin: auto 0px;
+            display: flex;
+            background-color: rgba(123, 97, 255, 1);
+            border-radius: 10px;
+        }
     }
 }

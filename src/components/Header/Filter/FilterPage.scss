@@ -1,0 +1,17 @@
+.filter {
+    position: absolute;
+    width: 438px;
+    height: 700px;
+    background-color: aqua;
+    padding: 48px 40px;
+
+    &_close {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &_sort {
+
+
+    }
+}

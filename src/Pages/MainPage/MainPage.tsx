@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react"
 import "./MainPage.scss"
 import { useDispatch, useSelector } from "react-redux"
+import { Link } from "react-router-dom"
 
 import { Card } from "../../components/Card"
 import { postsFetch } from "../../thunkAction/postsFetch"
+import { useFilterFunction } from "../../components/Header/Filter/useFilterFunction"
+
 
 
 
 
 export const MainPage = () => {
     const postsData = useSelector((state: any) => state.posts);
+    const dataFilter = useSelector((state: any) => state.filters);
     const dispatch = useDispatch();
-
-
-    const [posts, setPosts] = useState('No content')
-
+    const filter = useFilterFunction;
 
     useEffect(() => {
         if (postsData.data === null) {
@@ -22,16 +23,46 @@ export const MainPage = () => {
         }
     }, [])
 
+
+
+    //изменение фильтра
+    const objFilter = {
+        sort: '',
+    };
+
     useEffect(() => {
-        if (postsData.data != null) {
-            setPosts(postsData.data.map((el: any) => {
-                return <Card img={el.Poster} filmName={el.Title} year={el.Year}/>
-            }))
+        if (dataFilter.sort) {
+            objFilter.sort = dataFilter.sort
         }
-    }, [postsData.data])
-    
+    }, [dataFilter])
+
+
+    //отфильтрованный массив
+    const [sortedArray, setSortedArray] = useState([])
+
+
+
+
+    useEffect(() => {
+        if (postsData.data) {
+            setSortedArray(filter(postsData.data, objFilter));
+        }
+    }, [postsData, dataFilter])
+
+
+    //test
+    useEffect(() => {
+        if (sortedArray) {
+            console.log(sortedArray);
+        }      
+    }, [sortedArray])
+
 
     return <div className="main-page">
-        {posts}
+        {sortedArray?.map((el: any) => {
+                return <Link key={el.imdbID} to={`/posts/${el.imdbID}`}>
+                            <Card img={el.Poster} filmName={el.Title} year={el.Year}/>
+                    </Link>
+            })}
         </div>
 }

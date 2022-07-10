@@ -1,10 +1,12 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import './App.css'
+
+import { Outlet } from "react-router-dom";
 
 import {MainPage} from './Pages/MainPage'
 import {Header} from "./components/Header"
 import {Menu} from "./components/Menu"
-import {FilmDescriptionPage} from './Pages/FilmDescriptionPage'
+import {SinglePage} from './Pages/SinglePage'
 
 function App() {
   return (
@@ -14,8 +16,9 @@ function App() {
 
       <div>
         <Header/>
-        {/* <FilmDescriptionPage/> */}
-        <MainPage/>
+        <Outlet/>
+        {/* <SinglePage/> */}
+        {/* <MainPage/> */}
       </div>
 
     </div>

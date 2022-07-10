@@ -19,6 +19,7 @@
         &--button-bookmark {
             width: 120px;
             height: 50px;
+
         }
 
         &--button-forward {
@@ -39,6 +40,13 @@
         &--button-right {
             width: 60px;
             height: 25px;
+        }
+    }
+
+    &_active {
+
+        & svg path {
+            fill: rgba(123, 97, 255, 1);
         }
     }
 }

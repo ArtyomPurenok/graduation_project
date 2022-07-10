@@ -9,7 +9,6 @@ const initialState: any = {
 const posts: any = createSlice({
     name: 'New posts',
     initialState,
-    reducers: {},
     extraReducers: {
         [postsFetch.pending]: (state: any) => {
             state.isLoading = true;
@@ -22,8 +21,19 @@ const posts: any = createSlice({
             state.isLoading = false;
         },
     },
+    reducers: {
+        // bookmark: (state: any, action: PayloadAction<number>) => {
+        //     console.log(action.payload);
+        //     console.log(state.data);
+            
+            
+        //     // if (state != null) {
+        //     //     state.data = state.data?.map((el: any) => el.imdbID === action.payload ? {...el, bookmark: !el.bookmark}: el)
+        //     // }
+        // },
+    },
 
 })
 
-export const {bookmark, like, dislike} = posts.actions
+export const {bookmark} = posts.actions
 export default posts.reducer

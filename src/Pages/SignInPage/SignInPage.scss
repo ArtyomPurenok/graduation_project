@@ -1,0 +1,71 @@
+.sign-in {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(https://dev.ua/storage/images/45/91/55/98/derived/77be2b6f50fb1cbe5e0fbf7e458a824c.jpg) 0 0/100% 100% no-repeat;
+    z-index: 99999;
+
+    &_logo {
+        position: absolute;
+        top: 48px;
+        left: 62px;
+        border: none;
+        background-color: transparent;
+    }
+
+    & a {
+        color: rgba(128, 133, 139, 1);
+        margin: 0px;
+    }
+
+    &_email {
+        margin-bottom: 24px;
+    }
+
+    &_center {
+        width: 504px;
+        height: 440px;
+        padding: 40px;
+        background-color: rgba(36, 36, 38, 1);
+        border-radius: 10px;
+
+        & h1 {
+            margin: 0px;
+            color: white;
+            font-weight: 500;
+        }
+
+        &--inputs {
+            margin: 40px 0px;
+        }
+    }
+
+    &_button {
+        width: 100%;
+        height: 56px;
+        font-size: 16px;
+        color: white;
+        background-color: rgba(123, 97, 255, 1);
+        border-color: transparent;
+        border-radius: 10px;
+
+        &:active {
+            background-color: rgba(123, 97, 255, 0.7);
+        }
+    }
+
+    &_sign-up {
+        text-align: center;
+        color: rgba(128, 133, 139, 1);
+
+        & a {
+            text-decoration: none;
+            color: rgba(123, 97, 255, 1);
+        }
+    }
+}

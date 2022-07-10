@@ -5,8 +5,12 @@ type ButtonProps = {
     className?: string
     onClick?: any
     text?: string
+    Icon?: any
 }
 
-export const Button = ({className, onClick, text}: ButtonProps) => {
-    return <button className={className} onClick={onClick}>{text}</button>
+export const Button = ({className, onClick, text,Icon}: ButtonProps) => {
+    return <button className={className} onClick={onClick}>
+        {Icon && <Icon height='100%'/>}
+        {text}
+        </button>
 }
