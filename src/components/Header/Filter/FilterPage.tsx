@@ -6,27 +6,47 @@ import { Button } from "../../Button"
 import { Input } from "../../Input"
 
 import { setFilter } from "../../../redux/reducer/filterReducer"
+import { open } from "../../../redux/reducer/filterReducer"
+
+import { ReactComponent as IconCancel } from '../../../components/Icons/IconCancel.svg'
 
 export const Filter = () => {
-    const postsData = useSelector((state: any) => state.filters);
+    // const postsData = useSelector((state: any) => state.filters);
     const dispatch = useDispatch();
-    
+
+    //active button
+    const [active, setActive] = useState(2);
+
+
+    //close filter
+    const closeFilter = () => {
+        dispatch(open('close'))
+    }
+
+    useEffect(() => {
+        console.log(active);
+        
+    }, [active])
+
+
+    //function set filters
     const [sort, setSort] = useState('')
     const [movieName, setMovieName] = useState('')
 
 
-    //function set filters
-    const setSortYear = () => {
+    const setSortYear = (el: any) => {
+        console.log(el.target.dataset.index);
+        
+        setActive(el.target.dataset.index);
         setSort('year')
     }
-    const setSortRating = () => {
+    const setSortRating = (el: any) => {
         setSort('rating')
+        setActive(el.target.dataset.index);
     }
     const setMovName = (event: React.ChangeEvent<HTMLInputElement>) => {
         setMovieName(event.target.value)
     } 
-
-
 
 
 
@@ -50,25 +70,18 @@ export const Filter = () => {
 
 
 
-    //test
-    useEffect(() => {
-        console.log(postsData);
-        
-    }, [postsData])
-
-
 
     return <div className="filter">
         <div className="filter_close">
             <h1>Filter</h1>
-            <Button/>
+            <Button onClick={closeFilter} Icon={IconCancel}/>
         </div>
         
         <div className="filter_sort">
             <p>Sort by</p>
-            <div className="filter_content--buttons">
-                <Button onClick={setSortRating} text="Rating"/>
-                <Button onClick={setSortYear} text="Year"/>
+            <div className="filter_sort--buttons">
+                <Button className={`filter_sort--rating ${1 == active ? 'filter_sort--rating-active' : ''}`} onClick={setSortRating} dataIndex={'1'} text="Rating"/>
+                <Button className={`filter_sort--year ${2 == active ? 'filter_sort--rating-active' : ''}`} onClick={setSortYear} dataIndex={'2'} text="Year"/>
             </div>
         </div>
 
@@ -89,8 +102,8 @@ export const Filter = () => {
         </div>
 
         <div className="filter_clear-show">
-            <Button text="clear"/>
-            <Button onClick={addFilters} text="show"/>
+            <Button className="filter_button-clear" text="clear"/>
+            <Button className="filter_button-show" onClick={addFilters} text="show"/>
         </div>
     </div>
 }

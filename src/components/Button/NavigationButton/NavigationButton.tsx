@@ -8,8 +8,9 @@ type ButtonProps = {
     text?: string
     route?: string | number
     Icon?: any
+    dataIndex?: any
 }
 
-export const NavigationButton = ({className, onClick, text, route, Icon}: ButtonProps) => {
-    return <Link to={`${route}`}><button className={className} onClick={onClick}>{text}{Icon && <Icon/>}</button></Link>
+export const NavigationButton = ({className, onClick, text, route, Icon, dataIndex}: ButtonProps) => {
+    return <Link to={`${route}`}><button data-index={dataIndex} className={className} onClick={onClick}>{Icon && <Icon/>}{text}</button></Link>
 }

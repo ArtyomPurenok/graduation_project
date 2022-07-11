@@ -1,20 +1,117 @@
 .filter {
     position: absolute;
-    width: 438px;
+    width: 368px;
     height: 700px;
-    background-color: aqua;
+    background-color: rgba(36, 36, 38, 1);
     padding: 48px 40px;
+    z-index: 999;
 
     &_close {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
+        & h1 {
+            font-size: 24px;
+            color: white;
+        }
+
+        & button {
+            width: 25px;
+            height: 25px;
+            border: none;
+            background-color: transparent;
+        }
+    }
+
+    &_sort {
+        margin-top: 30px;
+
+        & p {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0px;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        &--rating {
+            width: 180px;
+            height: 46px;
+            font-size: 16px;
+            color: rgba(128, 133, 139, 1);
+            border: 2px solid rgba(50, 53, 55, 1);
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            background-color: transparent;
+
+            &-active {
+                color: white !important;
+                background-color: rgba(50, 53, 55, 1) !important;
+            }
+        }
+        &--year {
+            width: 180px;
+            height: 46px;
+            font-size: 16px;
+            color: rgba(128, 133, 139, 1);
+            border: 2px solid rgba(50, 53, 55, 1);
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            background-color: transparent;
+
+            &-active {
+                color: white !important;
+                background-color: rgba(50, 53, 55, 1) !important;
+            }
+        }
     }
 
     &_movie-name {
+        margin-top: 30px;
+
+        & p {
+            margin: 0px;
+            margin-bottom: 5px;
+            color: white;
+        }
 
         & input {
-            width: 438px;
-            height: 56px;
+            width: 338px;
+            height: 46px;
+            font-size: 16px;
+            border-radius: 10px;
+            padding: 0px 10px;
+            outline: none;
+            border-color: transparent;
+            color: white;
+            background-color: rgba(50, 53, 55, 1);
         }
+    }
+
+    &_clear-show {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 60px;
+    }
+
+    &_button-clear {
+        width: 165px;
+        height: 46px;
+        font-size: 16px;
+        border-color: transparent;
+        border-radius: 10px;
+        color: white;
+        background-color: rgba(50, 53, 55, 1);
+    }
+
+    &_button-show {
+        width: 165px;
+        height: 46px;
+        font-size: 16px;
+        border-color: transparent;
+        border-radius: 10px;
+        color: white;
+        background-color: rgba(123, 97, 255, 1);
     }
 }

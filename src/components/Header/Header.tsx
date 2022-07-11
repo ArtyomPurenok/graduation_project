@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react"
 import "./Header.scss"
 import { useNavigate } from "react-router-dom"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 import { Input } from "../Input"
 import { Button } from "../Button"
 import { Filter } from "./Filter"
 import { seachFetch } from "../../thunkAction/seachFetch"
+import { open } from "../../redux/reducer/filterReducer"
 
 import { ReactComponent as IconArrow } from '../../components/Icons/IconArrow.svg'
 import { ReactComponent as IconUser } from '../../components/Icons/IconUser.svg'
+import { ReactComponent as IconFilter } from '../../components/Icons/IconFilter.svg'
 
 
 
@@ -17,12 +19,14 @@ import { ReactComponent as IconUser } from '../../components/Icons/IconUser.svg'
 
 
 export const Header = () => {
+    const dataUser = useSelector((state: any) => state.user);
+    const dataFilter = useSelector((state: any) => state.filters.open);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [userIcon, setUserIcon] = useState();
 
 
-    //function seach
+    //Seach
     const [seach, setSeach] = useState('');
 
 
@@ -36,6 +40,12 @@ export const Header = () => {
     } 
 
 
+    //User
+    useEffect(() => {
+        if (dataUser.userName) {
+            console.log(dataUser.userName);     
+        }
+    }, [dataUser])
 
 
 
@@ -43,10 +53,17 @@ export const Header = () => {
     const [filterActive, setFilterActive] = useState('');
 
     const openFilter = () => {
-        if (!filterActive) {
-            setFilterActive('active')
-        }else {setFilterActive('')}
+        dispatch(open('open'))
     }
+
+    
+    useEffect(() => {
+        if (dataFilter === 'open') {
+            setFilterActive('open')
+        }else if (dataFilter === 'close') {
+            setFilterActive('')
+        }
+    }, [dataFilter])
 
     const authorization = () => {
         navigate('/signIn')
@@ -62,14 +79,13 @@ export const Header = () => {
         <div className="header">
             <div className="header_seach">
                 <Input onChange={makeSeach} placeholder="Seach"/>
-                <Button onClick={openFilter} text='filter'/>
+                <Button onClick={openFilter} Icon={IconFilter}/>
             </div>
 
                 <button onClick={authorization} className="header_user">
-                    {/* {userData.name ? <div className="header_user--icon">{userData.name}</div> : <IconUser/>} */}
-                    <div className="header_user--icon"><IconUser/></div>
-                    <p>Aretem</p>
-                    <div className="header_user--arrow"><IconArrow/></div>
+                    <div className="header_user--icon">{dataUser.userName ? dataUser.userName.slice(0, 2) : <IconUser/>}</div>
+                    {dataUser.userName ? <p>{dataUser.userName}</p> : <p>Log In</p>}
+                    {dataUser.userName ? <div className="header_user--arrow"><IconArrow/></div> : ''}
                 </button>
         </div>
 

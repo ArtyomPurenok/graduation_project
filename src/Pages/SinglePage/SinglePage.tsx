@@ -11,6 +11,7 @@ import { CardDataTable } from "./components/CardDataTable/CardDataTable"
 import { OnePostFetch } from "../../thunkAction/OnePostFetch"
 import { addPost, deletePost } from "../../redux/reducer/favoritesReducer"
 import { ReactComponent as IconBookmark } from '../../components/Icons/IconBookmark.svg'
+import { ReactComponent as IconShare } from '../../components/Icons/IconShare.svg'
 
 
 
@@ -71,7 +72,7 @@ export const SinglePage = () => {
     
              <div className="film-description_img--buttons">
              <Button onClick={checkFavorites} className={`film-description_img--button-bookmark ${active && 'film-description_active'}`} Icon={IconBookmark}/>
-             <Button className="film-description_img--button-forward"/>
+             <Button className="film-description_img--button-forward" Icon={IconShare}/>
              </div>
          </div>
     
@@ -89,7 +90,7 @@ export const SinglePage = () => {
              </div>
     
     
-             <div>
+             {/* <div>
                  <div className="film-description_recommendations">
                      <p>Recommendations</p>
     
@@ -102,7 +103,7 @@ export const SinglePage = () => {
                  <div className="film-description_cards">
                  <Card className=""/>
                  </div>
-             </div>
+             </div> */}
          </div>
      </div>
 }

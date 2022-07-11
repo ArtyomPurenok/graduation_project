@@ -14,7 +14,7 @@ function App() {
 
       <Menu/>
 
-      <div>
+      <div style={{width: '100%'}}>
         <Header/>
         <Outlet/>
         {/* <SinglePage/> */}

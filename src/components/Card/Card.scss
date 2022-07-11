@@ -31,9 +31,17 @@
 
     &_film-name {
         margin: 15px 0px 0px 0px;
+        color: white;
     }
 
     &_year {
         margin: 0px 0px 15px 0px;
+        color: white;
+    }
+
+    &_genre {
+        font-size: 12px;
+        margin-top: 15px;
+        color: white;
     }
 }

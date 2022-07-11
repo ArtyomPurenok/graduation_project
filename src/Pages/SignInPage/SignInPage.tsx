@@ -39,11 +39,11 @@ export const SignInPage = () => {
     }
 
 
-    // useEffect(() => {
-    //     if (userData) {
-    //         navigate('/main')
-    //     }  
-    // }, [userData])
+    useEffect(() => {
+        if (userData.userName != null) {
+            navigate('/main')
+        }  
+    }, [userData])
 
 
 

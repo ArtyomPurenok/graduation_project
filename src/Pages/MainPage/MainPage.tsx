@@ -73,13 +73,6 @@ export const MainPage = () => {
         >{el}</button>
     })
 
-    //test
-    // useEffect(() => {
-    //     if (sortedArray) {
-    //         console.log(sortedArray);
-    //     }      
-    // }, [sortedArray])
-
 
     return <div className="main-page">
 

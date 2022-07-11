@@ -18,6 +18,7 @@ import { VerifyPage } from './Pages/VerifyPage'
 import { ResetPasswordPage } from './Pages/ResetPasswordPage'
 import { NewPasswordPage } from './Pages/NewPasswordPage'
 import { SeachPage } from './Pages/SeachPage'
+import { TrendsPage } from './Pages/TrendsPage'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -31,6 +32,7 @@ root.render(
             <Route path='/' element={<App/>}>
             <Route path='/main' element={<MainPage/>}/>
             <Route path='/favorites' element={<FavoritesPage/>}/>
+            <Route path='/trends' element={<TrendsPage/>}/>
             <Route path='/signIn' element={<SignInPage/>}/>
             <Route path='/signUp' element={<SignUpPage/>}/>
             <Route path='/verify' element={<VerifyPage/>}/>

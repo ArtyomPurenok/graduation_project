@@ -18,6 +18,7 @@ import filters from "./reducer/filterReducer"
 import tokens from "./reducer/tokensReducer"
 import userReducer from "./reducer/userReducer"
 import seachReducer from "./reducer/seachReducer"
+import trends from "./reducer/trendsReducer"
 
 const rootReduser = combineReducers({
     favorites: favorites,
@@ -39,6 +40,7 @@ export const store = configureStore({
         filters: filters,
         user: userReducer,
         seach: seachReducer,
+        trends: trends,
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

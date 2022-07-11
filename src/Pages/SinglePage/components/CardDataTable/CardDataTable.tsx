@@ -11,12 +11,12 @@ export const CardDataTable = ({dataForDescription}: DataProps) => {
     
     const tab = arrTabData.map((el: string) => {
         return <tr>
-            <td>{el}</td>
+            <td className="film-description_film-data--table-td">{el}</td>
             <td>{dataForDescription?.[el]}</td>
         </tr>
     })
 
-    return <table>
+    return <table className="film-description_film-data--table">
         <thead>
             {tab}
     </thead>

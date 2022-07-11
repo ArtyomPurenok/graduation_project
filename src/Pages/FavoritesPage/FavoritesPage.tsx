@@ -11,10 +11,6 @@ import { useFilterFunction } from "../../components/Header/Filter/useFilterFunct
 export const FavoritesPage = () => {
     const postsFavorites = useSelector((state: any) => state.persist.favorites.data);
 
-    useEffect(() => {
-        console.log(postsFavorites);
-        
-    }, [postsFavorites])
 
     //sort function
     const dataFilter = useSelector((state: any) => state.filters);
@@ -52,7 +48,7 @@ export const FavoritesPage = () => {
     return <div className="favorites-page">
         {sortedArray?.map((el: any) => {
                 return <Link key={el.imdbID} to={`/posts/${el.imdbID}`}>
-                            <Card img={el.Poster} filmName={el.Title} year={el.Year} rating={el.imdbRating}/>
+                            <Card img={el.Poster} filmName={el.Title} rating={el.imdbRating} genre={el.Genre.split(', ').join(' · ')}/>
                     </Link>
             })}
     </div>
