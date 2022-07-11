@@ -78,15 +78,14 @@ export const Filter = () => {
                 <Input onChange={setMovName}/>
             </div>
             <div className="filter_genre"></div>
-            <div className="filter_years">
+            {/* <div className="filter_years">
                 <Input/>
                 <Input/>
-            </div>
-            <div className="filter_ratig">
+            </div> */}
+            {/* <div className="filter_ratig">
                 <Input/>
                 <Input/>
-            </div>
-            <div className="filter_country"></div>
+            </div> */}
         </div>
 
         <div className="filter_clear-show">

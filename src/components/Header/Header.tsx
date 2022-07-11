@@ -62,7 +62,7 @@ export const Header = () => {
         <div className="header">
             <div className="header_seach">
                 <Input onChange={makeSeach} placeholder="Seach"/>
-                <Button onClick={openFilter}/>
+                <Button onClick={openFilter} text='filter'/>
             </div>
 
                 <button onClick={authorization} className="header_user">
