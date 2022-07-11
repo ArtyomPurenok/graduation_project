@@ -1,23 +1,23 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
-import { postsFetch } from "../../thunkAction/postsFetch"
+import { seachFetch } from "../../thunkAction/seachFetch"
 
 const initialState: any = {
     data: null,
     isLoading: false,
 }
 
-const posts: any = createSlice({
-    name: 'New posts',
+const seachPosts: any = createSlice({
+    name: 'Seach posts',
     initialState,
     extraReducers: {
-        [postsFetch.pending]: (state: any) => {
+        [seachFetch.pending]: (state: any) => {
             state.isLoading = true;
         },
-        [postsFetch.fulfilled]: (state: any, action: PayloadAction<any>) => {
+        [seachFetch.fulfilled]: (state: any, action: PayloadAction<any>) => {           
             state.data = action.payload.Search;
             state.isLoading = false;
         },
-        [postsFetch.rejected]: (state: any) => {
+        [seachFetch.rejected]: (state: any) => {
             state.isLoading = false;
         },
     },
@@ -25,5 +25,5 @@ const posts: any = createSlice({
 
 })
 
-export const {bookmark} = posts.actions
-export default posts.reducer
+export const {} = seachPosts.actions
+export default seachPosts.reducer

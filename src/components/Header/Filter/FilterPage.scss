@@ -10,8 +10,11 @@
         justify-content: space-between;
     }
 
-    &_sort {
+    &_movie-name {
 
-
+        & input {
+            width: 438px;
+            height: 56px;
+        }
     }
 }

@@ -17,6 +17,7 @@ import favorites from "./reducer/favoritesReducer"
 import filters from "./reducer/filterReducer"
 import tokens from "./reducer/tokensReducer"
 import userReducer from "./reducer/userReducer"
+import seachReducer from "./reducer/seachReducer"
 
 const rootReduser = combineReducers({
     favorites: favorites,
@@ -37,6 +38,7 @@ export const store = configureStore({
         persist: persistedReduser,
         filters: filters,
         user: userReducer,
+        seach: seachReducer,
     },
     middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

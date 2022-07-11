@@ -17,6 +17,7 @@ import { SignUpPage } from './Pages/SignUpPage'
 import { VerifyPage } from './Pages/VerifyPage'
 import { ResetPasswordPage } from './Pages/ResetPasswordPage'
 import { NewPasswordPage } from './Pages/NewPasswordPage'
+import { SeachPage } from './Pages/SeachPage'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -35,6 +36,7 @@ root.render(
             <Route path='/verify' element={<VerifyPage/>}/>
             <Route path='/resetPassword' element={<ResetPasswordPage/>}/>
             <Route path='/newPassword' element={<NewPasswordPage/>}/>
+            <Route path='/seach' element={<SeachPage/>}/>
             <Route path='/posts/:id' element={<SinglePage/>}/>
             </Route>
             <Route

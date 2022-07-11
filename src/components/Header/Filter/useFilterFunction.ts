@@ -20,6 +20,20 @@ export const useFilterFunction = (arr: any, filter: any) => {
         })
     }
 
+    //sort to movie name
+    if (filter.movieName) {
+        newArray = newArray.filter((el: any) => {
+            const name = el.Title.toLowerCase();
+            const seachWord = filter.movieName.toLowerCase();
+            const pattern = new RegExp( seachWord, 'g' );
+            const qresult = name.match(pattern);
+            
+            if (qresult != null) {
+              return el
+            }
+          });         
+    }
+
 
     
     

@@ -5,40 +5,56 @@ import { useDispatch, useSelector } from "react-redux"
 import { Button } from "../../Button"
 import { Input } from "../../Input"
 
-import { filterSort } from "../../../redux/reducer/filterReducer"
+import { setFilter } from "../../../redux/reducer/filterReducer"
 
 export const Filter = () => {
     const postsData = useSelector((state: any) => state.filters);
     const dispatch = useDispatch();
     
     const [sort, setSort] = useState('')
+    const [movieName, setMovieName] = useState('')
 
-    //sort
+
+    //function set filters
     const setSortYear = () => {
         setSort('year')
     }
     const setSortRating = () => {
         setSort('rating')
     }
+    const setMovName = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setMovieName(event.target.value)
+    } 
 
-    useEffect(() => {
-        console.log(postsData);
-        
-    }, [postsData])
+
+
 
 
     const addFilters = () => {
         const arrDataFilter = {
             sort: '',
+            movieName: '',
         };
 
         if (sort) {
             arrDataFilter.sort = `${sort}`;
         }
+        if (movieName) {
+            arrDataFilter.movieName = `${movieName}`
+        }
 
-        dispatch(filterSort(arrDataFilter))
+        dispatch(setFilter(arrDataFilter))
     }
 
+
+
+
+
+    //test
+    useEffect(() => {
+        console.log(postsData);
+        
+    }, [postsData])
 
 
 
@@ -58,7 +74,8 @@ export const Filter = () => {
 
         <div className="filter_all-filter">
             <div className="filter_movie-name">
-                <Input/>
+                <p>Full or short movie name</p>
+                <Input onChange={setMovName}/>
             </div>
             <div className="filter_genre"></div>
             <div className="filter_years">

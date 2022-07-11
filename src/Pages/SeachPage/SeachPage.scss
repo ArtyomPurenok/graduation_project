@@ -1,0 +1,32 @@
+.seach-page {
+
+    &_content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    // &_pagination {
+    //     text-align: center;
+    //     margin: 40px;
+
+    //     &--button {
+    //         width: 40px;
+    //         height: 40px;
+    //         margin: 10px;
+    //         border: 2px solid rgba(123, 97, 255, 1);
+    //         border-radius: 50%;
+    //         background-color: transparent;
+
+    //         &-active {
+    //             box-shadow: 0 0 10px rgba(123, 97, 255, 1);
+    //             border: 3px solid rgba(123, 97, 255, 1);
+    //         }
+
+    //         &:hover {
+    //             box-shadow: 0 0 10px rgba(123, 97, 255, 1);
+
+    //         }
+    //     }
+    // }
+}
